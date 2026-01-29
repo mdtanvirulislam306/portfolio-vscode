@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title> My Portfolio – Md Tanvirul Islam - Software engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Optional: custom Tailwind config (colors a bit like VS Code) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            vscodeBg: "#0f172a",     // slate-900
+            vscodePanel: "#020617",  // slate-950
+            vscodeBorder: "#1f2937", // slate-800
+            vscodeAccent: "#38bdf8", // sky-400
+          },
+          fontFamily: {
+            mono: ["JetBrains Mono", "Fira Code", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-vscodeBg text-slate-100 min-h-screen flex items-stretch antialiased">
+
+  <!-- ACTIVITY BAR (left slim bar) -->
+  <div class="w-12 bg-vscodePanel border-r border-vscodeBorder flex flex-col items-center justify-between py-3 text-[10px]">
+    <!-- Top icons -->
+    <div class="space-y-4 flex flex-col items-center">
+      <div class="w-8 h-8 rounded-xl flex items-center justify-center bg-vscodeBg/60 hover:bg-vscodeAccent/20 cursor-pointer transition">
+        <!-- Explorer icon -->
+        <span class="text-lg">📁</span>
+      </div>
+      <div class="w-8 h-8 rounded-xl flex items-center justify-center hover:bg-vscodeAccent/20 cursor-pointer transition">
+        <!-- Search icon -->
+        <span class="text-lg">🔍</span>
+      </div>
+      <div class="w-8 h-8 rounded-xl flex items-center justify-center hover:bg-vscodeAccent/20 cursor-pointer transition">
+        <!-- Git icon -->
+        <span class="text-lg"></span>
+      </div>
+      <div class="w-8 h-8 rounded-xl flex items-center justify-center hover:bg-vscodeAccent/20 cursor-pointer transition">
+        <!-- Debug icon -->
+        <span class="text-lg">🐞</span>
+      </div>
+    </div>
+
+    <!-- Bottom icon -->
+    <div class="w-8 h-8 rounded-xl flex items-center justify-center hover:bg-vscodeAccent/20 cursor-pointer transition">
+      <!-- Settings -->
+      <span class="text-lg">⚙️</span>
+    </div>
+  </div>
+
+  <!-- MAIN COLUMN -->
+  <div class="flex-1 flex flex-col">
+
+    <!-- TOP TITLE BAR (filename + controls) -->
+    <header class="h-10 bg-vscodeBg border-b border-vscodeBorder flex items-center justify-between px-3 text-xs">
+      <div class="flex items-center gap-3">
+        <span class="font-semibold text-slate-300">
+          My Portfolio – Md Tanvirul Islam - Software engineer
+        </span>
+        
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+        <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+        <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+      </div>
+    </header>
+
+    <!-- TAB BAR -->
+    <div class="h-9 bg-vscodeBg border-b border-vscodeBorder flex items-center text-xs overflow-x-auto">
+      <div class="flex items-stretch">
+        <button class="px-4 flex items-center gap-2 border-r border-vscodeBorder bg-vscodePanel">
+          <span class="text-emerald-400">about.tsx</span>
+          <span class="text-slate-500 text-[10px]">×</span>
+        </button>
+        <button class="px-4 hidden md:flex items-center gap-2 border-r border-vscodeBorder hover:bg-vscodePanel/60">
+          <span class="text-sky-300"><a href="#experience-section">experience.ts</a></span>
+          <span class="text-slate-500 text-[10px]">×</span>
+        </button>
+        <button class="px-4 hidden md:flex items-center gap-2 border-r border-vscodeBorder hover:bg-vscodePanel/60">
+          <span class="text-rose-300">
+            <a href="#contact-section">contact.json</a>
+          </span>
+          <span class="text-slate-500 text-[10px]">×</span>
+        </button>
+      </div>
+      <div class="ml-auto flex items-center pr-3 gap-3 text-slate-400">
+        <span class="hidden sm:inline">🔁 main</span>
+        <span class="hidden sm:inline">✔︎ Auto Save</span>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="flex flex-1 overflow-hidden">
+
+      <!-- EXPLORER SIDEBAR -->
+      <aside class="w-64 bg-vscodeBg border-r border-vscodeBorder text-[11px] overflow-auto hidden sm:flex flex-col">
+        <div class="px-3 py-2 flex items-center justify-between border-b border-vscodeBorder">
+          <span class="text-[10px] font-semibold tracking-wide text-slate-400">
+            EXPLORER
+          </span>
+          <span class="text-slate-500">…</span>
+        </div>
+
+        <div class="px-3 py-2 space-y-1">
+          <div>
+            <button class="flex items-center gap-1 text-slate-400 hover:text-slate-200">
+              <span>▾</span>
+              <span class="uppercase tracking-wide text-[10px]">PORTFOLIO</span>
+            </button>
+            <div class="pl-4 mt-1 space-y-1">
+              <div class="flex items-center gap-2 hover:bg-slate-800/60 rounded px-1 py-0.5 cursor-pointer">
+                <span class="text-emerald-400">∎</span>
+                <span>about.tsx</span>
+              </div>
+              <div class="flex items-center gap-2 hover:bg-slate-800/60 rounded px-1 py-0.5 cursor-pointer">
+                <span class="text-sky-400">∎</span>
+                <span><a href="#experience-section">experience.ts</a></span>
+              </div>
+              <div class="flex items-center gap-2 hover:bg-slate-800/60 rounded px-1 py-0.5 cursor-pointer">
+                <span class="text-rose-400">∎</span>
+                <span><a href="#contact-section">contact.json</a></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-3">
+            <button class="flex items-center gap-1 text-slate-400 hover:text-slate-200">
+              <span>▾</span>
+              <span class="uppercase tracking-wide text-[10px]">ASSETS</span>
+            </button>
+            <div class="pl-4 mt-1 space-y-1">
+              <div class="flex items-center gap-2 text-slate-400 hover:bg-slate-800/60 rounded px-1 py-0.5 cursor-pointer">
+                <span>📄</span>
+                <span><a href="MD_TANVIRUL_ISLAM_Software_Engineer_CV.pdf" target="_blank">resume.pdf</a></span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-400 hover:bg-slate-800/60 rounded px-1 py-0.5 cursor-pointer">
+                <span>📷</span>
+                <span><a href="avatar.png" target="_blank"
+                  class="relative inline-block text-blue-600 font-medium group">
+                  avatar.png
+                  <span
+                    class="absolute left-0 top-full mt-2 hidden group-hover:block
+                          bg-white border border-gray-300 rounded shadow-lg p-1 z-50">
+                    <img src="avatar.png" alt="avatar preview" class="w-40 h-auto">
+                  </span>
+                    </a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- EDITOR + TERMINAL -->
+      <main class="flex-1 flex flex-col">
+
+        <!-- EDITOR WINDOW (ABOUT SECTION AS "CODE") -->
+        <section class="flex-1 bg-vscodePanel overflow-auto font-mono text-xs sm:text-sm">
+          <div class="flex">
+            <!-- Line numbers -->
+            <div class="select-none text-right pr-4 pl-3 py-4 border-r border-vscodeBorder text-slate-600 text-[11px] leading-relaxed">
+              1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29
+            </div>
+
+            <!-- Code content -->
+            <div class="py-4 px-3 sm:px-6 space-y-1">
+              <!-- Top gradient "comment" -->
+              <p><span class="text-sky-400">const</span> <span class="text-emerald-400">developer</span> <span class="text-slate-200">=</span> <span class="text-sky-400">{"{"}</span></p>
+
+              <p class="pl-6">
+                <span class="text-sky-300">name</span><span class="text-slate-200">:</span>
+                <span class="text-amber-300"> "Md Tanvirul Islam"</span><span class="text-slate-200">,</span>
+              </p>
+
+              <p class="pl-6">
+                <span class="text-sky-300">role</span><span class="text-slate-200">:</span>
+                <span class="text-amber-300"> "Software engineer"</span><span class="text-slate-200">,</span>
+              </p>
+
+              <p class="pl-6">
+                <span class="text-sky-300">location</span><span class="text-slate-200">:</span>
+                <span class="text-amber-300"> "Mohammadpur, Dhaka, Bangladesh"</span><span class="text-slate-200">,</span>
+              </p>
+
+              <p class="pl-6">
+                <span class="text-sky-300">portfolioTagline</span><span class="text-slate-200">:</span>
+                <span class="text-emerald-300">
+                  "I build clean, modern web experiences."
+                </span><span class="text-slate-200">,</span>
+              </p>
+
+              <p class="pl-6">
+                <span class="text-sky-300">Programming</span><span class="text-slate-200">:</span>
+                <span class="text-sky-400">[</span>
+                <span class="text-amber-300">
+                  "PHP", "OOP", "Laravel", "Javascript", "Vue", "jQuery", "MySQL", "Bootstrap"
+                </span>
+                <span class="text-sky-400">]</span><span class="text-slate-200">,</span>
+              </p>
+              <p class="pl-6">
+                <span class="text-sky-300">Tools</span><span class="text-slate-200">:</span>
+                <span class="text-sky-400">[</span>
+                <span class="text-amber-300">
+                  "Postman", "Git", "Firebase", "phpMyAdmin", "Composer", "Npm", "Linux", "Putty"
+                </span>
+                <span class="text-sky-400">]</span><span class="text-slate-200">,</span>
+              </p>
+              <p class="pl-6">
+                <span class="text-sky-300">Interests</span><span class="text-slate-200">:</span>
+                <span class="text-sky-400">[</span>
+                <span class="text-amber-300">
+                  "Problem Solving", "Searching", "AI", "Programming Books"
+                </span>
+                <span class="text-sky-400">]</span><span class="text-slate-200">,</span>
+              </p>
+
+              <p class="pl-6">
+                <span class="text-sky-300">about</span><span class="text-slate-200">:</span>
+                <span class="text-emerald-300">
+                  "Software Engineer specializing in Laravel and Vue.js, with experience building ERP, LMS, MLM, and e-commerce platforms. Passionate about clean architecture, problem solving, and scalable web solutions."
+                </span><span class="text-slate-200">,</span>
+              </p>
+              <p><span class="text-sky-400">{"}"}</span><span class="text-slate-200">;</span></p>
+
+              <br />
+
+              <!-- Projects "section" -->
+              <p><span class="text-sky-400"  id="experience-section">const</span> <span class="text-emerald-400">Experience</span> <span class="text-slate-200">=</span> <span class="text-sky-400">[</span></p>
+
+              <p class="pl-6">
+                <span class="text-sky-400">{"{"}</span>
+              </p>
+              <p class="pl-10">
+                <span class="text-sky-300">Role</span><span class="text-slate-200">:</span>
+                <span class="text-amber-300"> "Software Engineer (Remote)"</span><span class="text-slate-200">,</span>
+              </p>
+              <p class="pl-10">
+                <span class="text-sky-300">Company</span><span class="text-slate-200">:</span>
+                <span class="text-amber-300"> "Skill Builders IT Institute | 2025 – Present"</span><span class="text-slate-200">,</span>
+              </p>
+              <p class="pl-10">
+                <span class="text-sky-300">description</span><span class="text-slate-200">:</span>
+                <span class="text-emerald-300">
+                  "Working remotely as a Software Engineer, developing and maintaining web applications using PHP (Laravel) and JavaScript.
+                    Actively involved in designing and developing Learning Management Systems (LMS) with course management, user roles, and progress tracking.
+                    Developing MLM (Multi-Level Marketing) software based on complex business logic, including referral structures, commission calculation, and hierarchical user management.
+                    Contributing to project planning, feature development, and continuous system enhancements.
+                    "
+                </span><span class="text-slate-200">,</span>
+              </p>
+              <p class="pl-10">
+                <span class="text-sky-300">Tech</span><span class="text-slate-200">:</span>
+                <span class="text-amber-300">["Laravel", "Bootstrap", "jQuery", "MySql"]</span>
+              </p>
+              <p class="pl-10">
+                <span class="text-sky-300">Projects</span><span class="text-slate-200">:</span>
+                <span class="text-amber-600">["<a href="http://skillbuildersit.com" target="_blank">skillbuildersit.com</a>","<a href="http://fundaura.xyz" target="_blank">fundaura.xyz</a>"]</span>
+              </p>
+              <p class="pl-6">
+                <span class="text-sky-400">{"}"}</span><span class="text-slate-200">,</span>
+              </p>
+
+             
+              <p class="pl-6">
+                <span class="text-sky-400">{"{"}</span>
+              </p>
+              <p class="pl-10">
+                <span class="text-sky-300">Role</span><span class="text-slate-200">:</span>
+                <span class="text-amber-300"> "Software Engineer"</span><span class="text-slate-200">,</span>
+              </p>
+              <p class="pl-10">
+                <span class="text-sky-300">Company</span><span class="text-slate-200">:</span>
+                <span class="text-amber-300"> "RetinaSoft | 2023 – 2025"</span><span class="text-slate-200">,</span>
+              </p>
+              <p class="pl-10">
+                <span class="text-sky-300">description</span><span class="text-slate-200">:</span>
+                <span class="text-emerald-300">
+                  "Worked as a Software Engineer specialising in PHP (Laravel) and JavaScript–based web application development.
+                    Developed ERP systems, accounting and financial management solutions, car rental applications, and multi-vendor e-commerce platforms.
+                    Integrated secure payment gateways, including Stripe, bKash, and SSLCommerz.
+                    Focused on building scalable, efficient, and maintainable software solutions.
+                    "
+                </span><span class="text-slate-200">,</span>
+              </p>
+              <p class="pl-10">
+                <span class="text-sky-300">Tech</span><span class="text-slate-200">:</span>
+                <span class="text-amber-300">["Laravel", "Bootstrap", "jQuery", "Vue.js", "MySql"]</span>
+              </p>
+              
+              <p class="pl-10">
+                <span class="text-sky-300">Projects</span><span class="text-slate-200">:</span>
+                <span class="text-amber-600">["<a href="http://bostonairportxpress.com" target="_blank">bostonairportxpress.com</a>",
+                  "<a href="http://staging.ajaxtradingcorp.com" target="_blank">staging.ajaxtradingcorp.com</a>",
+                  "<a href="http://rebusel.com" target="_blank">rebusel.com</a>",
+                  "<a href="http://alhisab.app" target="_blank">alhisab.app</a>"]</span>
+              </p>
+              <p class="pl-6">
+                <span class="text-sky-400">{"}"}</span><span class="text-slate-200">,</span>
+              </p>
+
+
+
+              <p class="pl-6">
+                <span class="text-sky-400">{"{"}</span>
+              </p>
+              <p class="pl-10">
+                <span class="text-sky-300">Role</span><span class="text-slate-200">:</span>
+                <span class="text-amber-300"> "Senior Executive ( IT )"</span><span class="text-slate-200">,</span>
+              </p>
+              <p class="pl-10">
+                <span class="text-sky-300">Company</span><span class="text-slate-200">:</span>
+                <span class="text-amber-300"> "Dhroobo Bazar Limited | 2021 – 2023"</span><span class="text-slate-200">,</span>
+              </p>
+              <p class="pl-10">
+                <span class="text-sky-300">description</span><span class="text-slate-200">:</span>
+                <span class="text-emerald-300">
+                  "Contributed to the development of DhrooboBazar.com, a full-featured e-commerce platform.
+                    Built and maintained backend services using Laravel.
+                    Developed frontend features using Vue.js for improved user experience.
+                    Assisted in performance optimisation and feature enhancements.
+                    "
+                </span><span class="text-slate-200">,</span>
+              </p>
+              <p class="pl-10">
+                <span class="text-sky-300">Tech</span><span class="text-slate-200">:</span>
+                <span class="text-amber-300">["Laravel", "Bootstrap", "Vue.js", "MySql","E-commerce"]</span>
+              </p>
+              <p class="pl-10">
+                <span class="text-sky-300">Projects</span><span class="text-slate-200">:</span>
+                <span class="text-amber-600">["<a href="https://dhroobo.com" target="_blank">dhroobo.com</a>"]</span>
+              </p>
+              <p class="pl-6">
+                <span class="text-sky-400">{"}"}</span><span class="text-slate-200">,</span>
+              </p>
+
+
+              
+              <p><span class="text-sky-400">]</span><span class="text-slate-200">;</span></p>
+
+              <br />
+            </div>
+          </div>
+        </section>
+
+        <!-- TERMINAL PANEL -->
+        <section class="h-40 sm:h-48 border-t border-vscodeBorder bg-vscodePanel font-mono text-[11px] flex flex-col">
+          <div class="flex items-center justify-between px-3 h-7 border-b border-vscodeBorder text-slate-400">
+            <div class="flex items-center gap-4">
+              <span class="text-[10px]">TERMINAL</span>
+              <span class="text-[10px] text-slate-600">PROBLEMS</span>
+              <span class="text-[10px] text-slate-600">OUTPUT</span>
+              <span class="text-[10px] text-slate-600">DEBUG CONSOLE</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs">
+              <span>➕</span>
+              <span>🗑</span>
+              <span>⚙️</span>
+            </div>
+          </div>
+
+          <div class="flex-1 overflow-auto px-3 py-2 space-y-1 text-slate-200" id="contact-section">
+            <p class="text-slate-500">
+              PORTFOLIO <span class="text-emerald-400">npm</span> run dev
+            </p>
+            <p>$ hi, I’m <span class="text-emerald-300 font-semibold">Md Tanvirul Islam</span> 👋</p>
+            <p>$ I build <span class="text-sky-300">modern web apps</span> and <span class="text-sky-300">beautiful UIs</span>.</p>
+            <br />
+            <p>// Contact info</p>
+            <p>
+              phone: <span class="text-amber-300">+880 1797-125469</span>
+            </p>
+            <p>
+              email: <span class="text-amber-300">mdtanvirulislam306@gmail.com</span>
+            </p>
+            <p>
+              github: <span class="text-amber-300">github.com/mdtanvirulislam306</span>
+            </p>
+            <p>
+              linkedin: <span class="text-amber-300">linkedin.com/in/md-tanvirul-islam-software-developer-larave-vue-react</span>
+            </p>
+            <br />
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- STATUS BAR -->
+    <footer class="h-7 bg-vscodeBg border-t border-vscodeBorder text-[10px] flex items-center justify-between px-2 text-slate-300">
+      <div class="flex items-center gap-3">
+        <span class="flex items-center gap-1">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>Ready</span>
+        </span>
+        <span>main*</span>
+        <span> Git</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span>Ln 42, Col 13</span>
+        <span>Spaces: 2</span>
+        <span>UTF-8</span>
+        <span>LF</span>
+        <span>TypeScript React</span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
